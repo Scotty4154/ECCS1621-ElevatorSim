@@ -6,17 +6,34 @@
 
 package elevator;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import javax.swing.JLabel;
+
 /**
  *
  * @author n-scott.1
  */
 public class ElevatorFrame extends javax.swing.JFrame {
 
+    private Elevator elev1;
+    private Elevator elev3;
+    
     /**
      * Creates new form ElevatorFrame
      */
     public ElevatorFrame() {
         initComponents();
+        this.getContentPane().setBackground(Color.WHITE);
+        
+        elev1 = new Elevator();
+        elev3 = new Elevator();
+        
+        elev1.addFloors(new JLabel[]{lblE1F1,lblE1F2, lblE1F3});
+        elev3.addFloors(new JLabel[]{lblE3F1,lblE3F2, lblE3F3});
+        
+        elev1.setActiveFloor(0);
+        elev3.setActiveFloor(0);
     }
 
     /**
@@ -43,8 +60,14 @@ public class ElevatorFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Elevator Simulator");
+        setBackground(new java.awt.Color(255, 255, 255));
         setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         setPreferredSize(new java.awt.Dimension(500, 350));
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
@@ -59,35 +82,47 @@ public class ElevatorFrame extends javax.swing.JFrame {
         lblElevator3Title.setText("3");
         getContentPane().add(lblElevator3Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
+        lblE1F3.setBackground(new java.awt.Color(255, 255, 255));
         lblE1F3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE1F3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE1F3.setText("=][=");
+        lblE1F3.setOpaque(true);
         lblE1F3.setPreferredSize(new java.awt.Dimension(50, 30));
         getContentPane().add(lblE1F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 50, 40));
 
+        lblE1F2.setBackground(new java.awt.Color(255, 255, 255));
         lblE1F2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE1F2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE1F2.setText("=][=");
+        lblE1F2.setOpaque(true);
         getContentPane().add(lblE1F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 50, 40));
 
+        lblE1F1.setBackground(new java.awt.Color(255, 255, 255));
         lblE1F1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE1F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE1F1.setText("=][=");
+        lblE1F1.setOpaque(true);
         getContentPane().add(lblE1F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 50, 40));
 
+        lblE3F3.setBackground(new java.awt.Color(255, 255, 255));
         lblE3F3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE3F3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE3F3.setText("=][=");
+        lblE3F3.setOpaque(true);
         getContentPane().add(lblE3F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 50, 40));
 
+        lblE3F2.setBackground(new java.awt.Color(255, 255, 255));
         lblE3F2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE3F2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE3F2.setText("=][=");
+        lblE3F2.setOpaque(true);
         getContentPane().add(lblE3F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 50, 40));
 
+        lblE3F1.setBackground(new java.awt.Color(255, 255, 255));
         lblE3F1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE3F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE3F1.setText("=][=");
+        lblE3F1.setOpaque(true);
         getContentPane().add(lblE3F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 50, 40));
 
         jLabel1.setText("Down: W");
@@ -101,6 +136,52 @@ public class ElevatorFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeyPressed
+        int key = evt.getKeyCode();
+        
+        System.out.println(evt.getKeyChar()+"|"+key+"|"+KeyEvent.VK_W);
+        
+        switch(key){
+            case KeyEvent.VK_W:            
+                if(elev1.checkDistance(lblE1F3,-1) < elev3.checkDistance(lblE3F3,-1)){
+                    elev1.changeFloor(lblE1F3,-1);
+                }else{
+                    elev3.changeFloor(lblE3F3,-1);
+                }
+                break;
+            case KeyEvent.VK_A:
+                if(elev1.checkDistance(lblE1F2,1) < elev3.checkDistance(lblE3F2,1)){
+                    elev1.changeFloor(lblE1F2,1);
+                }else{
+                    elev3.changeFloor(lblE3F2,1);
+                }
+                break;
+            case KeyEvent.VK_S:
+                if(elev1.checkDistance(lblE1F2,-1) < elev3.checkDistance(lblE3F2,-1)){
+                    elev1.changeFloor(lblE1F2,-1);
+                }else{
+                    elev3.changeFloor(lblE3F2,-1);
+                }
+                break;
+            case KeyEvent.VK_Z:
+                if(elev1.checkDistance(lblE1F1,1) < elev3.checkDistance(lblE3F1,1)){
+                    elev1.changeFloor(lblE1F1,1);
+                }else{
+                    elev3.changeFloor(lblE3F1,1);
+                }
+                break;
+            case KeyEvent.VK_1:
+                elev1.changeFloor(lblE1F1, 0);
+                break;
+            case KeyEvent.VK_2:
+                elev1.changeFloor(lblE1F2, 0);
+                break;
+            case KeyEvent.VK_3:
+                elev1.changeFloor(lblE1F3, 0);
+                break;
+        }
+    }//GEN-LAST:event_KeyPressed
 
     /**
      * @param args the command line arguments
