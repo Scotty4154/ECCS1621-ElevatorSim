@@ -6,6 +6,8 @@
 
 package elevator;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author n-scott.1
@@ -13,7 +15,7 @@ package elevator;
 public class Elevator {
     
     //Variables
-    private FloorLabel floors[];
+    private JLabel floors[];
     
     public Elevator(){
         

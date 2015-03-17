@@ -62,6 +62,7 @@ public class ElevatorFrame extends javax.swing.JFrame {
         lblE1F3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblE1F3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblE1F3.setText("=][=");
+        lblE1F3.setPreferredSize(new java.awt.Dimension(50, 30));
         getContentPane().add(lblE1F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 50, 40));
 
         lblE1F2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
