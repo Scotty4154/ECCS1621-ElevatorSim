@@ -28,18 +28,75 @@ public class ElevatorFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblTitle = new javax.swing.JLabel();
+        lblElevator1Title = new javax.swing.JLabel();
+        lblElevator3Title = new javax.swing.JLabel();
+        lblE1F3 = new javax.swing.JLabel();
+        lblE1F2 = new javax.swing.JLabel();
+        lblE1F1 = new javax.swing.JLabel();
+        lblE3F3 = new javax.swing.JLabel();
+        lblE3F2 = new javax.swing.JLabel();
+        lblE3F1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Elevator Simulator");
+        setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        setPreferredSize(new java.awt.Dimension(500, 350));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        lblTitle.setText("Elevators");
+        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 150, 42));
+
+        lblElevator1Title.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblElevator1Title.setText("1");
+        getContentPane().add(lblElevator1Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+
+        lblElevator3Title.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblElevator3Title.setText("3");
+        getContentPane().add(lblElevator3Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
+
+        lblE1F3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblE1F3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblE1F3.setText("=][=");
+        getContentPane().add(lblE1F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 50, 40));
+
+        lblE1F2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblE1F2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblE1F2.setText("=][=");
+        getContentPane().add(lblE1F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 50, 40));
+
+        lblE1F1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblE1F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblE1F1.setText("=][=");
+        getContentPane().add(lblE1F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 50, 40));
+
+        lblE3F3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblE3F3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblE3F3.setText("=][=");
+        getContentPane().add(lblE3F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 50, 40));
+
+        lblE3F2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblE3F2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblE3F2.setText("=][=");
+        getContentPane().add(lblE3F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 50, 40));
+
+        lblE3F1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblE3F1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblE3F1.setText("=][=");
+        getContentPane().add(lblE3F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 50, 40));
+
+        jLabel1.setText("Down: W");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+
+        jLabel2.setText("<html>Up: A<br>\nDown: S");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        jLabel3.setText("Up: Z");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,5 +137,17 @@ public class ElevatorFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblE1F1;
+    private javax.swing.JLabel lblE1F2;
+    private javax.swing.JLabel lblE1F3;
+    private javax.swing.JLabel lblE3F1;
+    private javax.swing.JLabel lblE3F2;
+    private javax.swing.JLabel lblE3F3;
+    private javax.swing.JLabel lblElevator1Title;
+    private javax.swing.JLabel lblElevator3Title;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
