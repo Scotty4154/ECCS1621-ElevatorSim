@@ -180,6 +180,15 @@ public class ElevatorFrame extends javax.swing.JFrame {
             case KeyEvent.VK_3:
                 elev1.changeFloor(lblE1F3, 0);
                 break;
+            case KeyEvent.VK_NUMPAD1:
+                elev3.changeFloor(lblE3F1, 0);
+                break;
+            case KeyEvent.VK_NUMPAD2:
+                elev3.changeFloor(lblE3F2, 0);
+                break;
+            case KeyEvent.VK_NUMPAD3:
+                elev3.changeFloor(lblE3F3, 0);
+                break;                
         }
     }//GEN-LAST:event_KeyPressed
 

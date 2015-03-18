@@ -26,6 +26,7 @@ public class Elevator {
     private int currFloor;
     private int direction;
     private int target;
+    private int targetDirection;
     private final Timer movementTimer;
     private final Timer doorTimer; 
     
@@ -126,6 +127,8 @@ public class Elevator {
                 }
             }
             
+            this.targetDirection = targetDirection;
+            
             if(start == target && direction == targetDirection){ 
                     if(!isOpen[currFloor]){
                         moving = false;
@@ -149,7 +152,7 @@ public class Elevator {
         
         setActiveFloor(currFloor+direction);
         
-        if(currFloor == target){
+        if(currFloor == target && direction == targetDirection){
             movementTimer.stop();
             moving = false;
             doorTimer.start();
